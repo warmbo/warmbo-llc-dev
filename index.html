@@ -8,7 +8,7 @@
         /* Critical CSS - inline to prevent FOUC */
         body { 
             margin: 0; 
-            font-family: Arial, sans-serif; 
+            font-family: 'Inter', Arial, sans-serif; 
             visibility: visible;
         }
         .header { 
@@ -27,6 +27,9 @@
             padding-bottom: 100px; 
         }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -34,7 +37,10 @@
     <header class="header">
         <div class="container">
             <nav class="nav">
-                <div class="logo">Warmbo LLC</div>
+                <div class="logo-container">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iMTAiIGZpbGw9InVybCgjZ3JhZGllbnQwX2xpbmVhcl8xXzEpIi8+CjxwYXRoIGQ9Ik0xMiAxNEgyOFYxNkgxMlYxNFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xMiAyMEgyOFYyMkgxMlYyMFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xMiAyNkgyNFYyOEgxMlYyNloiIGZpbGw9IndoaXRlIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MF9saW5lYXJfMV8xIiB4MT0iMCIgeTE9IjAiIHgyPSI0MCIgeTI9IjQwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiM0QTkwRTIiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMTk3NkQyIi8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPHN2Zz4K" alt="Warmbo LLC Logo" class="logo-img">
+                    <div class="logo-text">Warmbo LLC</div>
+                </div>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
@@ -49,9 +55,9 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Expert Computer Repair & Tech Support</h1>
-                <p>We make technology work for you with convenient pickup & delivery service. Your devices, expertly repaired and returned to you working perfectly.</p>
-                <a href="#contact" class="btn btn-primary">Get Your Device Fixed Today</a>
+                <h1 class="fade-in-up" data-delay="0">Expert Computer Repair & Tech Support</h1>
+                <p class="fade-in-up" data-delay="200">We make technology work for you with convenient pickup & delivery service. Your devices, expertly repaired and returned to you working perfectly.</p>
+                <a href="#contact" class="btn btn-primary fade-in-up" data-delay="400">Get Your Device Fixed Today</a>
             </div>
         </div>
     </section>
@@ -59,34 +65,34 @@
     <!-- Services Section Component -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Our Services</h2>
+            <h2 class="section-title fade-in-up">Our Services</h2>
             <div class="services-grid">
-                <div class="service-card animate-on-scroll">
+                <div class="service-card fade-in-up" data-delay="0">
                     <div class="service-icon">💻</div>
                     <h3>Computer Repair</h3>
                     <p>Hardware diagnostics, component replacement, system optimization, and performance tuning for desktop and laptop computers.</p>
                 </div>
-                <div class="service-card animate-on-scroll">
+                <div class="service-card fade-in-up" data-delay="100">
                     <div class="service-icon">🛠️</div>
                     <h3>Technical Support</h3>
                     <p>Software troubleshooting, virus removal, data recovery, system setup, and ongoing technical assistance.</p>
                 </div>
-                <div class="service-card animate-on-scroll">
+                <div class="service-card fade-in-up" data-delay="200">
                     <div class="service-icon">🏠</div>
                     <h3>Pickup & Delivery</h3>
                     <p>Convenient home and office pickup service. We'll collect your device, fix it at our facility, and deliver it back to you.</p>
                 </div>
-                <div class="service-card animate-on-scroll">
+                <div class="service-card fade-in-up" data-delay="300">
                     <div class="service-icon">🔒</div>
                     <h3>Data Security</h3>
                     <p>Professional data backup, secure data transfer, privacy protection, and confidential handling of all your information.</p>
                 </div>
-                <div class="service-card animate-on-scroll">
+                <div class="service-card fade-in-up" data-delay="400">
                     <div class="service-icon">⚡</div>
                     <h3>System Optimization</h3>
                     <p>Speed up slow computers, clean up storage, update software, and optimize your system for peak performance.</p>
                 </div>
-                <div class="service-card animate-on-scroll">
+                <div class="service-card fade-in-up" data-delay="500">
                     <div class="service-icon">📱</div>
                     <h3>Device Setup</h3>
                     <p>New computer setup, software installation, network configuration, and personalized device customization.</p>
@@ -98,30 +104,30 @@
     <!-- Process Section Component -->
     <section id="process" class="process">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">How It Works</h2>
+            <h2 class="section-title fade-in-up">How It Works</h2>
             <div class="process-container">
                 <div class="process-steps">
-                    <div class="step animate-on-scroll">
+                    <div class="step">
                         <div class="step-number">1</div>
                         <h3>Contact Us</h3>
                         <p>Email us, call us, or fill out our contact form. We'll respond quickly to discuss your service needs and make it really easy.</p>
                     </div>
-                    <div class="step animate-on-scroll">
+                    <div class="step">
                         <div class="step-number">2</div>
                         <h3>We Pick Up</h3>
                         <p>We'll schedule our driver to pick up your device at your home or office at a time that's convenient for you.</p>
                     </div>
-                    <div class="step animate-on-scroll">
+                    <div class="step">
                         <div class="step-number">3</div>
                         <h3>Expert Repair</h3>
                         <p>Our skilled technicians will provide your requested service and thoroughly examine your device for other potential concerns.</p>
                     </div>
-                    <div class="step animate-on-scroll">
+                    <div class="step">
                         <div class="step-number">4</div>
                         <h3>Quality Check</h3>
                         <p>After your device meets our high standard of service and repair, we ensure everything is working perfectly.</p>
                     </div>
-                    <div class="step animate-on-scroll">
+                    <div class="step">
                         <div class="step-number">5</div>
                         <h3>We Deliver</h3>
                         <p>We'll schedule our driver to deliver your device back to you, fully repaired and working smoothly again!</p>
@@ -134,9 +140,9 @@
     <!-- Contact Section Component -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title fade-in-up">Get In Touch</h2>
             <div class="contact-grid">
-                <div class="contact-info animate-on-scroll">
+                <div class="contact-info fade-in-up" data-delay="0">
                     <h3>Contact Information</h3>
                     <div class="contact-item">
                         <span class="icon">📞</span>
@@ -169,7 +175,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="contact-form animate-on-scroll">
+                <div class="contact-form fade-in-up" data-delay="200">
                     <h3>Send Us a Message</h3>
                     <form id="contactForm">
                         <div class="form-group">
@@ -198,11 +204,18 @@
     <!-- Footer Component -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Warmbo LLC. All rights reserved.</p>
-            <p>Expert Computer Repair & Technical Support | Pickup & Delivery Service</p>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHJ4PSIxMCIgZmlsbD0idXJsKCNncmFkaWVudDBfbGluZWFyXzFfMSkiLz4KPHA+dGggZD0iTTEyIDE0SDI4VjE2SDEyVjE0WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTEyIDIwSDI4VjIySDEyVjIwWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTEyIDI2SDI0VjI4SDEyVjI2WiIgZmlsbD0id2hpdGUiLz4KPHRleHQgeD0iNTAiIHk9IjI2IiBmb250LWZhbWlseT0iSW50ZXIsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IndoaXRlIj5XYXJtYm8gTExDPC90ZXh0Pgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJncmFkaWVudDBfbGluZWFyXzFfMSIgeDE9IjAiIHkxPSIwIiB4Mj0iNDAiIHkyPSI0MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjNEE5MEUyIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE5NzZEMiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=" alt="Warmbo LLC Logo" class="footer-logo-img">
+                </div>
+                <div class="footer-text">
+                    <p>&copy; 2025 Warmbo LLC. All rights reserved.</p>
+                    <p>Expert Computer Repair & Technical Support | Pickup & Delivery Service</p>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
