@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warmbo LLC - Computer Repair & Technical Support</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        header {
+            background: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #4A90E2;
+        }
+        
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #4A90E2, #1976D2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover { color: #4A90E2; }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #4A90E2, #1976D2);
+            color: white;
+            text-align: center;
+            padding: 150px 0 100px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #4A90E2;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+        
+        .btn:hover { transform: translateY(-2px); }
+        
+        /* Services */
+        .services {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover { transform: translateY(-5px); }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        /* Process */
+        .process {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 2rem 1rem;
+            background: #f8f9fa;
+            border-radius: 15px;
+            position: relative;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #4A90E2;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .step h3 {
+            margin: 1.5rem 0 1rem;
+            color: #333;
+        }
+        
+        /* Contact */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #4A90E2, #1976D2);
+            color: white;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+        
+        .contact-info, .contact-form {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+        }
+        
+        .contact-item .icon {
+            font-size: 1.5rem;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: white;
+            color: #4A90E2;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo-img {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #4A90E2, #1976D2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2rem; }
+            .section-title { font-size: 2rem; }
+            .process-steps { flex-direction: column; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <div class="logo-img">W</div>
+                    <span>Warmbo LLC</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Expert Computer Repair & Tech Support</h1>
+            <p>We make technology work for you with convenient pickup & delivery service. Your devices, expertly repaired and returned to you working perfectly.</p>
+            <a href="#contact" class="btn">Get Your Device Fixed Today</a>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>Computer Repair</h3>
+                    <p>Hardware diagnostics, component replacement, system optimization, and performance tuning for desktop and laptop computers.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛠️</div>
+                    <h3>Technical Support</h3>
+                    <p>Software troubleshooting, virus removal, data recovery, system setup, and ongoing technical assistance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Pickup & Delivery</h3>
+                    <p>Convenient home and office pickup service. We'll collect your device, fix it at our facility, and deliver it back to you.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔒</div>
+                    <h3>Data Security</h3>
+                    <p>Professional data backup, secure data transfer, privacy protection, and confidential handling of all your information.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>System Optimization</h3>
+                    <p>Speed up slow computers, clean up storage, update software, and optimize your system for peak performance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Device Setup</h3>
+                    <p>New computer setup, software installation, network configuration, and personalized device customization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="process">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Contact Us</h3>
+                    <p>Email us, call us, or fill out our contact form. We'll respond quickly to discuss your service needs.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>We Pick Up</h3>
+                    <p>We'll schedule our driver to pick up your device at your home or office at a convenient time.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Expert Repair</h3>
+                    <p>Our skilled technicians will provide your requested service and examine your device thoroughly.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Quality Check</h3>
+                    <p>After repair, we ensure everything is working perfectly and meets our high standards.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>We Deliver</h3>
+                    <p>We'll deliver your device back to you, fully repaired and working smoothly again!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <span class="icon">📞</span>
+                        <div>
+                            <strong>Phone:</strong>
+                            <a href="tel:763-401-1822">763-401-1822</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">✉️</span>
+                        <div>
+                            <strong>Email:</strong>
+                            <a href="mailto:help@warmbo.com">help@warmbo.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">🏢</span>
+                        <div>
+                            <strong>Business:</strong>
+                            Warmbo LLC<br>
+                            <small>Owned by Cody Warmbo and Jason Nelson</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">🚚</span>
+                        <div>
+                            <strong>Service Area:</strong>
+                            Home & Office Pickup/Delivery
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Describe Your Issue</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your computer problem..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <div class="footer-logo-img">W</div>
+                <span>Warmbo LLC</span>
+            </div>
+            <p>&copy; 2025 Warmbo LLC. All rights reserved.</p>
+            <p>Expert Computer Repair & Technical Support | Pickup & Delivery Service</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Contact form
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            const subject = encodeURIComponent(`Service Request from ${data.name}`);
+            const body = encodeURIComponent(
+                `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\n\nMessage:\n${data.message}`
+            );
+            
+            window.location.href = `mailto:help@warmbo.com?subject=${subject}&body=${body}`;
+            
+            const btn = this.querySelector('.submit-btn');
+            btn.textContent = 'Message Sent!';
+            btn.style.background = '#4CAF50';
+            setTimeout(() => {
+                btn.textContent = 'Send Message';
+                btn.style.background = '';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
